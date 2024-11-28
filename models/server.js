@@ -15,7 +15,7 @@ class Server {
         this.listen();
 
     }
-    //*conectarBD() {
+    //conectarBD() {
        // this.con = mysql.createPool({
             //host: "localhost",
             //user: "root",
