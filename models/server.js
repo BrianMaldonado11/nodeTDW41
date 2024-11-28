@@ -7,7 +7,7 @@ const bcrypt = require('bcrypt');
 class Server {
     constructor() {
         this.app = express();
-        //this.conectarBD();
+        this.conectarBD();
         this.port = process.env.PORT;
 
         this.middlewares();
@@ -15,15 +15,15 @@ class Server {
         this.listen();
 
     }
-    //conectarBD() {
-       // this.con = mysql.createPool({
-            //host: "localhost",
-            //user: "root",
-            //password: "elrubiusOMG11",
-            //database: "usuariosBD"
-        //});
+    conectarBD() {
+       this.con = mysql.createPool({
+            host: "localhost",
+            user: "root",
+            password: "elrubiusOMG11",
+            database: "usuariosBD"
+        });
 
-    //}
+    }
     middlewares() {
         this.app.use(express.static('./public'));
         this.app.use(express.json());
